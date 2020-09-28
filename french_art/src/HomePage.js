@@ -117,11 +117,15 @@ class HomePage extends Component {
         }
     }
 
+    changePage = () => {
+        window.open("/QuizPage");
+    }
+
     render() {
         return (<>
             <div>
                 <AppBar style={{ height: "50px", textAlign: "center", backgroundColor: "azure", flex: 1, alignItems: "center", justifyContent: "center" }}>
-                    <Typography variant="h4" style={{ color: "black", fontFamily: "Garamond" }}>Welcome to my French Art Website!</Typography>
+                    <Typography variant="h4" style={{ color: "black", fontFamily: "Garamond" }}>Welcome to my French Art Website! - Gallery Mode</Typography>
                 </AppBar>
 
                 <Grid
@@ -156,12 +160,13 @@ class HomePage extends Component {
                         alignItems="center"
                         justifyContent="center"
                         spacing={1}
-                        style = {{position: "absolute", width: "650px", marginLeft: "830px", marginTop: "60px"}}>
+                        style = {{position: "absolute", width: "700px", marginLeft: "826px", marginTop: "60px"}}>
                         <Grid item> <TextField id = "artistName" label="Enter an Artist's Name" variant = "outlined"/> </Grid>
                         <Grid item> <Button style={{ fontFamily: "Garamond", fontSize: "20px", backgroundColor: "azure" }} onClick={this.changeArtist}>Change Artists!</Button> </Grid>
+                        <Grid item> <Button style = {{ fontFamily: "Garamond", fontSize: "20px", backgroundColor: "azure" }} onClick={this.changePage}>Go to Quiz Mode!</Button></Grid>
                         <Grid item> <br></br> </Grid>
                         <Grid item> <Typography variant="h5" style={{ fontFamily: "Garamond" }}>The selected artist is - {this.state.artist}</Typography> </Grid>
-                        <Grid item> <Typography variant="h6" style={{ fontFamily: "Garamond" }}>{this.changeDescription(this.state.artist)}</Typography> </Grid>
+                        <Grid item> <Typography variant="h6" style={{ fontFamily: "Garamond", width: "670px" }}>{this.changeDescription(this.state.artist)}</Typography> </Grid>
                     </Grid>
                 </Grid>
             </div>
